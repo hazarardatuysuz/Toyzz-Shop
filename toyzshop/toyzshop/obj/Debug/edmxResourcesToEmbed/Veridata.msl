@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dataveriModelStoreContainer" CdmEntityContainer="dataveriEntities1">
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="dataveriModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="KullaniciAdSoyad" ColumnName="KullaniciAdSoyad" />
+          <ScalarProperty Name="KullaniciUnvan" ColumnName="KullaniciUnvan" />
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+          <ScalarProperty Name="KullaniciMaas" ColumnName="KullaniciMaas" />
+          <ScalarProperty Name="IzinGunu" ColumnName="IzinGunu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatılanUrun">
+      <EntityTypeMapping TypeName="dataveriModel.SatılanUrun">
+        <MappingFragment StoreEntitySet="SatılanUrun">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunKategori" ColumnName="UrunKategori" />
+          <ScalarProperty Name="Stok" ColumnName="Stok" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="İslem" ColumnName="İslem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlınanUrun">
+      <EntityTypeMapping TypeName="dataveriModel.AlınanUrun">
+        <MappingFragment StoreEntitySet="AlınanUrun">
+          <ScalarProperty Name="AlınanFiyat" ColumnName="AlınanFiyat" />
+          <ScalarProperty Name="AlınanSirket" ColumnName="AlınanSirket" />
+          <ScalarProperty Name="Sirket4" ColumnName="Sirket4" />
+          <ScalarProperty Name="Sirket3" ColumnName="Sirket3" />
+          <ScalarProperty Name="Sirket2" ColumnName="Sirket2" />
+          <ScalarProperty Name="Sirket1" ColumnName="Sirket1" />
+          <ScalarProperty Name="UrunKategori" ColumnName="UrunKategori" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

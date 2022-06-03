@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dataveriModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciUnvan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciMaas" Type="Int32" />
+    <Property Name="IzinGunu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SatılanUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UrunKategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Stok" Type="Int32" Nullable="false" />
+    <Property Name="Fiyat" Type="Double" Nullable="false" />
+    <Property Name="İslem" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="dataveriEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="SatılanUrun" EntityType="Self.SatılanUrun" />
+    <EntitySet Name="AlınanUrun" EntityType="dataveriModel.AlınanUrun" />
+  </EntityContainer>
+  <EntityType Name="AlınanUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunKategori" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sirket1" Type="Double" />
+    <Property Name="Sirket2" Type="Double" />
+    <Property Name="Sirket3" Type="Double" />
+    <Property Name="Sirket4" Type="Double" />
+    <Property Name="AlınanSirket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlınanFiyat" Type="Double" Nullable="false" />
+  </EntityType>
+</Schema>

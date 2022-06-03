@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dataveriModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AlinanUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UrunKategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sirket1" Type="Double" />
+    <Property Name="Sirket2" Type="Double" />
+    <Property Name="Sirket3" Type="Double" />
+    <Property Name="Sirket4" Type="Double" />
+    <Property Name="AlınanSirket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AlınanFiyat" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Duyuru">
+    <Key>
+      <PropertyRef Name="DuyuruID" />
+    </Key>
+    <Property Name="DuyuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Duyuru1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciMaas" Type="Int32" />
+    <Property Name="IzinGunu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="KullaniciYntm">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SatilanUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UrunKategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Stok" Type="Int32" Nullable="false" />
+    <Property Name="Fiyat" Type="Double" Nullable="false" />
+    <Property Name="İslem" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="dataveriEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AlinanUrun" EntityType="Self.AlinanUrun" />
+    <EntitySet Name="Duyuru" EntityType="Self.Duyuru" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="KullaniciYntm" EntityType="Self.KullaniciYntm" />
+    <EntitySet Name="SatilanUrun" EntityType="Self.SatilanUrun" />
+  </EntityContainer>
+</Schema>

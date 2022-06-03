@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dataveriModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AlinanUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UrunKategori" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sirket1" Type="float" />
+    <Property Name="Sirket2" Type="float" />
+    <Property Name="Sirket3" Type="float" />
+    <Property Name="Sirket4" Type="float" />
+    <Property Name="AlınanSirket" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AlınanFiyat" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Duyuru">
+    <Key>
+      <PropertyRef Name="DuyuruID" />
+    </Key>
+    <Property Name="DuyuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Duyuru" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KullaniciSifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KullaniciMaas" Type="int" />
+    <Property Name="IzinGunu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KullaniciYntm">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SatilanUrun">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UrunKategori" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stok" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="float" Nullable="false" />
+    <Property Name="İslem" Type="int" />
+  </EntityType>
+  <EntityContainer Name="dataveriModelStoreContainer">
+    <EntitySet Name="AlinanUrun" EntityType="Self.AlinanUrun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Duyuru" EntityType="Self.Duyuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciYntm" EntityType="Self.KullaniciYntm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SatilanUrun" EntityType="Self.SatilanUrun" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
